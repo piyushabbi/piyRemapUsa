@@ -1,28 +1,28 @@
-.App {
+.App h1 {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+.App pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
   padding: 20px;
-  color: white;
+  overflow-x: scroll;
+  margin: 20px 10%;
+  text-align: left;
 }
 
-.App-title {
-  font-size: 1.5em;
+.show-json {
+  text-align: center;
 }
 
-.App-intro {
-  font-size: large;
+.show-json button {
+  cursor: pointer;
+  padding: 10px 20px;
+  color: #eee;
+  background: #222;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.show-json button:active {
+  background: #555;
 }
