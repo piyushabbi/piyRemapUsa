@@ -1,28 +1,39 @@
+.App {
+	margin: 0 20px;
+}
+
 .App h1 {
   text-align: center;
+  text-decoration: underline;
+}
+
+.App .states {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .App pre code {
-  background-color: #eee;
-  border: 1px solid #999;
-  display: block;
-  padding: 20px;
-  overflow-x: scroll;
-  margin: 20px 10%;
-  text-align: left;
+	background-color: #eee;
+	border: 1px solid #999;
+	display: block;
+	padding: 20px;
+	overflow-x: scroll;
+	margin: 20px 10%;
+	text-align: left;
 }
 
 .show-json {
-  text-align: center;
+	text-align: center;
 }
 
 .show-json button {
-  cursor: pointer;
-  padding: 10px 20px;
-  color: #eee;
-  background: #222;
+	cursor: pointer;
+	padding: 10px 20px;
+	color: #eee;
+	background: #222;
 }
 
 .show-json button:active {
-  background: #555;
+	background: #555;
 }

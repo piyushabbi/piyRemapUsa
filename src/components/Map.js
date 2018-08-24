@@ -3,7 +3,7 @@ import USAMap from './MapFile';
 
 class App extends Component {
 	state = {
-		activeStates: ['MN', 'NY', 'NE', 'TX', 'CA'],
+		activeStates: ['MN', 'NY', 'HI', 'MD', 'TX', 'CA'],
 		title: ''
 	};
 
@@ -26,7 +26,15 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<h1>Active States: {JSON.stringify(this.state.activeStates)}</h1>
+				<h1>Map</h1>
+				<div className="states">
+					<h3>List of active states:-</h3>
+					<ol>
+						{this.state.activeStates.map(state => (
+							<li key={state}>{state}</li>
+						))}
+					</ol>
+				</div>
 				<USAMap
 					customize={this.statesFilling()}
 					title={this.state.title}
