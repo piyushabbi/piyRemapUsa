@@ -20,7 +20,8 @@
 	padding: 20px;
 	overflow-x: scroll;
 	margin: 20px 10%;
-	text-align: left;
+  text-align: left;
+  max-height: 500px;
 }
 
 .show-json {
