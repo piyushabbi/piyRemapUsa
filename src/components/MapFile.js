@@ -113,7 +113,7 @@ class USAMap extends React.Component {
 				</div>
 			</React.Fragment>
 		);
-	}
+	} 
 }
 
 USAMap.propTypes = {
