@@ -102,18 +102,18 @@ class USAMap extends React.Component {
 							}));
 						}}
 					>
-						Toggle States Data
+						{this.state.showCode ? 'Hide' : 'Show'} States Data
 					</button>
 					{/* Total States JSON*/}
 					{this.state.showCode && (
 						<pre>
 							<code>{JSON.stringify(data, undefined, 4)}</code>
 						</pre>
- 					)}
+					)}
 				</div>
 			</React.Fragment>
 		);
-	} 
+	}
 }
 
 USAMap.propTypes = {
