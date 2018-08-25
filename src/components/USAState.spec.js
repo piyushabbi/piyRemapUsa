@@ -23,10 +23,20 @@ describe('<USAState /> Component', () => {
 	});
 
 	it('should call mouseover event', () => {
-		const onMouseOver = jest.fn();
-		const wrapper = shallow(<USAState mouseEventHandler={onMouseOver} />);
+		const mouseEventHandler = jest.fn();
+		const onMouseOver = jest.fn(() => {
+			mouseEventHandler('MI', "Michigan");
+		});
+		const wrapper = shallow(
+			<USAState 
+				mouseEventHandler={onMouseOver}
+				state="MI"
+				name="Michigan"
+			/>
+		);
 		wrapper.simulate('mouseover');
 		expect(onMouseOver).toHaveBeenCalled();
+		expect(mouseEventHandler).toHaveBeenCalledWith('MI', "Michigan");
 	});
 
 	it('should match snapshot', () => {

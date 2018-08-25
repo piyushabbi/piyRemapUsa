@@ -7,10 +7,6 @@ class USAMap extends React.Component {
 		showCode: false
 	};
 
-	clickHandler = stateAbbreviation => {
-		this.props.onClick(stateAbbreviation);
-	};
-
 	fillStateColor = state => {
 		if (
 			this.props.customize &&
@@ -23,19 +19,7 @@ class USAMap extends React.Component {
 		return this.props.defaultFill;
 	};
 
-	stateClickHandler = state => {
-		if (
-			this.props.customize &&
-			this.props.customize[state] &&
-			this.props.customize[state].clickHandler
-		) {
-			return this.props.customize[state].clickHandler;
-		}
-		return this.clickHandler;
-	};
-
 	mouseEventHandler = (stateAbbr, stateFull) => {
-		//alert(state);
 		this.props.titleHandler(stateAbbr, stateFull);
 	};
 
@@ -48,7 +32,6 @@ class USAMap extends React.Component {
 					dimensions={this.props.data[stateKey]['dimensions']}
 					state={stateKey}
 					fill={this.fillStateColor(stateKey)}
-					onClickState={this.stateClickHandler(stateKey)}
 					mouseEventHandler={this.mouseEventHandler}
 					name={this.props.data[stateKey]['name']}
 				/>
