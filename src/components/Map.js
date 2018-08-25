@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import USAMap from './MapFile';
+import data from '../data/states_info.json';
 
 class App extends Component {
 	state = {
@@ -25,22 +26,42 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
+			<React.Fragment>
 				<h1>Map</h1>
-				<div className="states">
-					<h3>List of active states:-</h3>
-					<ol>
-						{this.state.activeStates.map(state => (
-							<li key={state}>{state}</li>
-						))}
-					</ol>
+				<div className="flex-container">
+					<div className="states">
+						<h3>List of active states:-</h3>
+						<ol>
+							{this.state.activeStates.map(state => (
+								<li key={state}>{state}</li>
+							))}
+						</ol>
+					</div>
+					<USAMap
+						customize={this.statesFilling()}
+						title={this.state.title}
+						titleHandler={this.titleHandler}
+						data={data}
+					/>
 				</div>
-				<USAMap
-					customize={this.statesFilling()}
-					title={this.state.title}
-					titleHandler={this.titleHandler}
-				/>
-			</div>
+				<div className="show-json">
+					<button
+						onClick={() => {
+							this.setState(prevState => ({
+								showCode: !prevState.showCode
+							}));
+						}}
+					>
+						{this.state.showCode ? 'Hide' : 'Show'} States Data
+					</button>
+					{/* Total States JSON*/}
+					{this.state.showCode && (
+						<pre>
+							<code>{JSON.stringify(data, undefined, 4)}</code>
+						</pre>
+					)}
+				</div>
+			</React.Fragment>
 		);
 	}
 }

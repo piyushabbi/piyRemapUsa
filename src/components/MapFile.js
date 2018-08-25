@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import data from '../data/states_info.json';
 import USAState from './USAState';
 
 class USAMap extends React.Component {
@@ -42,16 +41,16 @@ class USAMap extends React.Component {
 
 	buildPaths = () => {
 		let paths = [];
-		for (let stateKey in data) {
+		for (let stateKey in this.props.data) {
 			const path = (
 				<USAState
 					key={stateKey}
-					dimensions={data[stateKey]['dimensions']}
+					dimensions={this.props.data[stateKey]['dimensions']}
 					state={stateKey}
 					fill={this.fillStateColor(stateKey)}
 					onClickState={this.stateClickHandler(stateKey)}
 					mouseEventHandler={this.mouseEventHandler}
-					name={data[stateKey]['name']}
+					name={this.props.data[stateKey]['name']}
 				/>
 			);
 			paths.push(path);
@@ -93,24 +92,6 @@ class USAMap extends React.Component {
 						</g>
 					</g>
 				</svg>
-
-				<div className="show-json">
-					<button
-						onClick={() => {
-							this.setState(prevState => ({
-								showCode: !prevState.showCode
-							}));
-						}}
-					>
-						{this.state.showCode ? 'Hide' : 'Show'} States Data
-					</button>
-					{/* Total States JSON*/}
-					{this.state.showCode && (
-						<pre>
-							<code>{JSON.stringify(data, undefined, 4)}</code>
-						</pre>
-					)}
-				</div>
 			</React.Fragment>
 		);
 	}

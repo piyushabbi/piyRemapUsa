@@ -3,14 +3,16 @@
 }
 
 .App h1 {
-  text-align: center;
-  text-decoration: underline;
+	text-align: center;
+	text-decoration: underline;
 }
 
 .App .states {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	flex-basis: 300px;
+	justify-content: center;
 }
 
 .App pre code {
@@ -20,12 +22,17 @@
 	padding: 20px;
 	overflow-x: scroll;
 	margin: 20px 10%;
-  text-align: left;
-  max-height: 500px;
+	text-align: left;
+	max-height: 500px;
+}
+
+.App .flex-container {
+	display: flex;
 }
 
 .show-json {
 	text-align: center;
+	margin-top: 40px;
 }
 
 .show-json button {
@@ -37,4 +44,50 @@
 
 .show-json button:active {
 	background: #555;
+}
+
+.App svg {
+	width: 100%;
+}
+#us-map {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+path:hover,
+circle:hover {
+	stroke: #238ea1;
+	stroke-width: 2px;
+	stroke-linejoin: round;
+	fill: #238ea1;
+	cursor: pointer;
+}
+#path67 {
+	fill: none;
+	stroke: #238ea1;
+	cursor: default;
+}
+#info-box {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	background-color: #ffffff;
+	border: 10px solid #bf0a30;
+	border-radius: 5px;
+	padding: 5px;
+	font-family: arial;
+}
+
+@media screen and (max-width: 500px) {
+	.show-json {
+		margin-top: 0;
+	}
+	.App .flex-container {
+		flex-direction: column-reverse;
+	}
 }
