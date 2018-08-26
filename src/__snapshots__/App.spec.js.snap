@@ -7,3 +7,5 @@ exports[`<App /> Component matches snapshot 1`] = `
   <App />
 </div>
 `;
+
+exports[`<App /> Component renders without crashing 1`] = `"{\\"_reactInternalInstance\\":\\"censored\\"}"`;

@@ -19,10 +19,6 @@ class USAMap extends React.Component {
 		return this.props.defaultFill;
 	};
 
-	mouseEventHandler = (stateAbbr, stateFull) => {
-		this.props.titleHandler(stateAbbr, stateFull);
-	};
-
 	buildPaths = () => {
 		let paths = [];
 		for (let stateKey in this.props.data) {
@@ -32,7 +28,12 @@ class USAMap extends React.Component {
 					dimensions={this.props.data[stateKey]['dimensions']}
 					state={stateKey}
 					fill={this.fillStateColor(stateKey)}
-					mouseEventHandler={this.mouseEventHandler}
+					mouseEventHandler={() => {
+						this.props.titleHandler(
+							stateKey,
+							this.props.data[stateKey]['name']
+						);
+					}}
 					name={this.props.data[stateKey]['name']}
 				/>
 			);
@@ -52,28 +53,7 @@ class USAMap extends React.Component {
 					viewBox="0 0 959 593"
 				>
 					<title>{this.props.title}</title>
-					<g className="outlines">
-						{this.buildPaths()}
-						<g className="DC state">
-							<path
-								className="DC1"
-								fill={this.fillStateColor('DC1')}
-								d="M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z"
-							/>
-							<circle
-								className="DC2"
-								onClick={this.clickHandler}
-								data-name={'DC'}
-								fill={this.fillStateColor('DC2')}
-								stroke="#FFFFFF"
-								strokeWidth="1.5"
-								cx="801.3"
-								cy="251.8"
-								r="5"
-								opacity="1"
-							/>
-						</g>
-					</g>
+					<g className="outlines">{this.buildPaths()}</g>
 				</svg>
 			</React.Fragment>
 		);

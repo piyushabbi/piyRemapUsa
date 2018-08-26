@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import App from './App';
+import Index from './index.js';
 
 describe('<App /> Component', () => {
 	it('renders App component', () => {
@@ -20,5 +21,13 @@ describe('<App /> Component', () => {
 	it('matches snapshot', () => {
 		const tree = shallow(<App />);
 		expect(toJson(tree)).toMatchSnapshot();
+	});
+	
+	it('renders without crashing', () => {
+		expect(
+			JSON.stringify(
+				Object.assign({}, Index, { _reactInternalInstance: 'censored' })
+			)
+		).toMatchSnapshot();
 	});
 });

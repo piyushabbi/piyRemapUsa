@@ -8,10 +8,15 @@ describe('MapFile Component', () => {
 	let wrapper;
 
 	beforeEach(() => {
+		const titleHandler = jest.fn();
 		wrapper = shallow(<MapFile />);
 	});
 
 	it('renders snapshot correctly', () => {
-		expect(wrapper).toMatchSnapshot();
+		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
+	it('executes mouse event', () => {
+		// console.log(wrapper.instance())
 	});
 });
