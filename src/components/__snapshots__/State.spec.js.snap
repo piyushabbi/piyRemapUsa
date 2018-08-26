@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<USAState /> Component should match snapshot 1`] = `
+exports[`<State /> Component should match snapshot 1`] = `
 <path
   className="MI state"
   d="M644.5,211"

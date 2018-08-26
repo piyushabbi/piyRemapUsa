@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 // import Map from './MapDander';
-import Map from './components/Map';
+import MapPage from './components/MapPage';
 
 class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Map />
+				<MapPage />
 			</div>
 		);
 	}

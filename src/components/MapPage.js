@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import USAMap from './MapFile';
+import USAMap from './USAMap';
 import data from '../data/states_info.json';
 
-class App extends Component {
+class MapPage extends Component {
 	state = {
 		activeStates: ['MN', 'NY', 'HI', 'MD', 'TX', 'CA'],
 		title: ''
@@ -66,4 +66,4 @@ class App extends Component {
 	}
 }
 
-export default App;
+export default MapPage;

@@ -2,19 +2,19 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import USAState from './USAState';
+import State from './State';
 
-describe('<USAState /> Component', () => {
-	it('renders USAState Component', () => {
+describe('<State /> Component', () => {
+	it('renders State Component', () => {
 		const wrapper = shallow(
-			<USAState key="MI" dimensions="M644.5,211" state="MI" fill="#d3d3d3" />
+			<State key="MI" dimensions="M644.5,211" state="MI" fill="#d3d3d3" />
 		);
 		expect(wrapper.length).toBe(1);
 	});
 
 	it('renders with correct props', () => {
 		const wrapper = shallow(
-			<USAState key="MI" dimensions="M644.5,211" state="MI" fill="#d3d3d3" />
+			<State key="MI" dimensions="M644.5,211" state="MI" fill="#d3d3d3" />
 		);
 		// console.log(wrapper.props());
 		expect(wrapper.props().d).toBe('M644.5,211');
@@ -28,7 +28,7 @@ describe('<USAState /> Component', () => {
 			mouseEventHandler('MI', "Michigan");
 		});
 		const wrapper = shallow(
-			<USAState 
+			<State 
 				mouseEventHandler={onMouseOver}
 				state="MI"
 				name="Michigan"
@@ -41,7 +41,7 @@ describe('<USAState /> Component', () => {
 
 	it('should match snapshot', () => {
 		const tree = shallow(
-			<USAState key="MI" dimensions="M644.5,211" state="MI" fill="#d3d3d3" />
+			<State key="MI" dimensions="M644.5,211" state="MI" fill="#d3d3d3" />
 		);
 		expect(toJson(tree)).toMatchSnapshot();
 	});

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Map renders snapshot correctly 1`] = `
+exports[`MapPage renders snapshot correctly 1`] = `
 <Fragment>
   <h1>
     Map

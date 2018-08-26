@@ -1,6 +1,6 @@
 import React from 'react';
 
-const USAState = props => {
+const State = props => {
 	return (
 		<path
 			d={props.dimensions}
@@ -15,4 +15,4 @@ const USAState = props => {
 	);
 };
 
-export default USAState;
+export default State;

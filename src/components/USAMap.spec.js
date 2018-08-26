@@ -2,14 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import MapFile from './MapFile';
+import USAMap from './USAMap';
 
-describe('MapFile Component', () => {
+describe('USAMap Component', () => {
 	let wrapper;
 
 	beforeEach(() => {
 		const titleHandler = jest.fn();
-		wrapper = shallow(<MapFile />);
+		wrapper = shallow(<USAMap />);
 	});
 
 	it('renders snapshot correctly', () => {

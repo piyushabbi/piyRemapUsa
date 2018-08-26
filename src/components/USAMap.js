@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import USAState from './USAState';
+import State from './State';
 
 class USAMap extends React.Component {
 	state = {
@@ -23,7 +23,7 @@ class USAMap extends React.Component {
 		let paths = [];
 		for (let stateKey in this.props.data) {
 			const path = (
-				<USAState
+				<State
 					key={stateKey}
 					dimensions={this.props.data[stateKey]['dimensions']}
 					state={stateKey}
